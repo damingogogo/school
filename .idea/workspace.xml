@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4c75cab-8825-4337-9380-facf8a197d34" name="Default Changelist" comment="填表报名和Echart例子" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="HTML File" />
+        <option value="spring-beans.schema" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../houduan/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="F:\houduan\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HXKQHGXQlxnsabNGcoTaG4JDwU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/School-work-main/ruoyi-system/src/main/resources/mapper/system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a6f67b5d051d461b73eeac70ca7383e2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\School-work-main\ruoyi-system\src\main\resources\mapper\system" />
+      <recent name="F:\School-work-main\ruoyi-system\src\main\java\com\ruoyi\people\service\impl" />
+      <recent name="F:\School-work-main\ruoyi-system\src\main\java\com\ruoyi\people\service" />
+      <recent name="F:\School-work-main\ruoyi-system\src\main\java\com\ruoyi\people\mapper" />
+      <recent name="F:\School-work-main\ruoyi-system\src\main\java\com\ruoyi\people\damain" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ruoyi-ui/src/api/people" />
+      <recent name="$PROJECT_DIR$/ruoyi-ui/src/api/subject" />
+      <recent name="$PROJECT_DIR$/ruoyi-ui/src/api/system" />
+      <recent name="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/system" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RuoYiApplication">
+    <configuration name="clean" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="School-work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="F:\School-work-main\bin" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="clean.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RuoYiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ruoyi-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ruoyi.RuoYiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Batch.clean" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4c75cab-8825-4337-9380-facf8a197d34" name="Default Changelist" comment="" />
+      <created>1668425972907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668425972907</updated>
+      <workItem from="1668425976210" duration="88000" />
+      <workItem from="1668426115242" duration="283000" />
+      <workItem from="1668426416710" duration="247000" />
+      <workItem from="1668428269345" duration="446000" />
+      <workItem from="1668431572394" duration="602000" />
+      <workItem from="1668432509616" duration="491000" />
+      <workItem from="1668433027896" duration="8007000" />
+      <workItem from="1668444013042" duration="616000" />
+      <workItem from="1668477540488" duration="3573000" />
+      <workItem from="1668532674413" duration="1251000" />
+      <workItem from="1668533939334" duration="4287000" />
+      <workItem from="1668612859684" duration="4057000" />
+      <workItem from="1668786937551" duration="751000" />
+      <workItem from="1668841242323" duration="13568000" />
+      <workItem from="1668919766205" duration="2941000" />
+      <workItem from="1669225455885" duration="20532000" />
+      <workItem from="1669947217107" duration="1563000" />
+      <workItem from="1669950693536" duration="1290000" />
+      <workItem from="1669965680740" duration="350000" />
+      <workItem from="1669966145073" duration="1276000" />
+      <workItem from="1669970473294" duration="776000" />
+      <workItem from="1669971306199" duration="1747000" />
+      <workItem from="1669981608909" duration="300000" />
+      <workItem from="1669981975622" duration="1355000" />
+      <workItem from="1670029548318" duration="3469000" />
+      <workItem from="1670038049967" duration="4929000" />
+      <workItem from="1670057407814" duration="972000" />
+      <workItem from="1670058451971" duration="344000" />
+      <workItem from="1670059085213" duration="347000" />
+      <workItem from="1670059686691" duration="3459000" />
+      <workItem from="1670115514551" duration="2156000" />
+      <workItem from="1670127228520" duration="1142000" />
+    </task>
+    <task id="LOCAL-00001" summary="20221115">
+      <created>1668442018106</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668442018106</updated>
+    </task>
+    <task id="LOCAL-00002" summary="20221115">
+      <created>1668442263550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668442263551</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改了登陆展示">
+      <created>1668443960358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668443960358</updated>
+    </task>
+    <task id="LOCAL-00004" summary="增加了学科模块实现代码">
+      <created>1668537753405</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668537753406</updated>
+    </task>
+    <task id="LOCAL-00005" summary="数据库应用云数据库">
+      <created>1668617160070</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668617160070</updated>
+    </task>
+    <task id="LOCAL-00006" summary="实现课程逻辑添加">
+      <created>1668617192800</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668617192800</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改了数据库应用case">
+      <created>1668617246535</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668617246535</updated>
+    </task>
+    <task id="LOCAL-00008" summary="实现了成绩管理逻辑">
+      <created>1668847780999</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668847780999</updated>
+    </task>
+    <task id="LOCAL-00009" summary="实现了教师管理逻辑">
+      <created>1668850942220</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668850942221</updated>
+    </task>
+    <task id="LOCAL-00010" summary="实现了学生管理逻辑">
+      <created>1668853778807</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668853778807</updated>
+    </task>
+    <task id="LOCAL-00011" summary="实现了家长管理，填表管理，报名管理">
+      <created>1669369991306</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669369991306</updated>
+    </task>
+    <task id="LOCAL-00012" summary="填表报名">
+      <created>1669370398618</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669370398618</updated>
+    </task>
+    <task id="LOCAL-00013" summary="填表报名和Echart例子">
+      <created>1669561753179</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669561753179</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/RuoYi-Vue" />
+    </ignored-roots>
+    <MESSAGE value="20221115" />
+    <MESSAGE value="修改了登陆展示" />
+    <MESSAGE value="增加了学科模块实现代码" />
+    <MESSAGE value="数据库应用云数据库" />
+    <MESSAGE value="实现课程逻辑添加" />
+    <MESSAGE value="修改了数据库应用case" />
+    <MESSAGE value="实现了成绩管理逻辑" />
+    <MESSAGE value="实现了教师管理逻辑" />
+    <MESSAGE value="实现了学生管理逻辑" />
+    <MESSAGE value="实现了家长管理，填表管理，报名管理" />
+    <MESSAGE value="填表报名" />
+    <MESSAGE value="填表报名和Echart例子" />
+    <option name="LAST_COMMIT_MESSAGE" value="填表报名和Echart例子" />
+  </component>
+</project>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.subject.mapper.StudentGradeMapper">
+
+    <resultMap type="StudentGrade" id="StudentGradeResult">
+        <result property="id"    column="id"    />
+        <result property="stuId"    column="stu_id"    />
+        <result property="stuName"    column="stu_name"    />
+        <result property="yuwen"    column="yuwen"    />
+        <result property="yingyu"    column="yingyu"    />
+        <result property="shuxue"    column="shuxue"    />
+        <result property="wuli"    column="wuli"    />
+        <result property="huaxue"    column="huaxue"    />
+        <result property="shengwu"    column="shengwu"    />
+        <result property="zhenzi"    column="zhenzi"    />
+        <result property="lishi"    column="lishi"    />
+        <result property="dili"    column="dili"    />
+        <result property="yingyue"    column="yingyue"    />
+        <result property="tiyu"    column="tiyu"    />
+        <result property="countNum"    column="count_num"    />
+        <result property="stuClass"    column="stu_class"    />
+        <result property="nianji"    column="nianji"    />
+    </resultMap>
+
+    <sql id="selectStudentGradeVo">
+        select id, stu_id, stu_name, yuwen, yingyu, shuxue, wuli, huaxue, shengwu, zhenzi, lishi, dili, yingyue, tiyu, count_num, stu_class, nianji from student_grade
+    </sql>
+
+    <select id="selectStudentGradeList" parameterType="StudentGrade" resultMap="StudentGradeResult">
+        <include refid="selectStudentGradeVo"/>
+        <where>
+            <if test="stuId != null  and stuId != ''"> and stu_id = #{stuId}</if>
+            <if test="stuName != null  and stuName != ''"> and stu_name like concat('%', #{stuName}, '%')</if>
+            <if test="stuClass != null  and stuClass != ''"> and stu_class = #{stuClass}</if>
+            <if test="nianji != null  and nianji != ''"> and nianji = #{nianji}</if>
+        </where>
+    </select>
+
+    <select id="selectStudentGradeById" parameterType="Long" resultMap="StudentGradeResult">
+        <include refid="selectStudentGradeVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertStudentGrade" parameterType="StudentGrade" useGeneratedKeys="true" keyProperty="id">
+        insert into student_grade
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">stu_id,</if>
+            <if test="stuName != null">stu_name,</if>
+            <if test="yuwen != null">yuwen,</if>
+            <if test="yingyu != null">yingyu,</if>
+            <if test="shuxue != null">shuxue,</if>
+            <if test="wuli != null">wuli,</if>
+            <if test="huaxue != null">huaxue,</if>
+            <if test="shengwu != null">shengwu,</if>
+            <if test="zhenzi != null">zhenzi,</if>
+            <if test="lishi != null">lishi,</if>
+            <if test="dili != null">dili,</if>
+            <if test="yingyue != null">yingyue,</if>
+            <if test="tiyu != null">tiyu,</if>
+            <if test="countNum != null">count_num,</if>
+            <if test="stuClass != null">stu_class,</if>
+            <if test="nianji != null">nianji,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="stuId != null">#{stuId},</if>
+            <if test="stuName != null">#{stuName},</if>
+            <if test="yuwen != null">#{yuwen},</if>
+            <if test="yingyu != null">#{yingyu},</if>
+            <if test="shuxue != null">#{shuxue},</if>
+            <if test="wuli != null">#{wuli},</if>
+            <if test="huaxue != null">#{huaxue},</if>
+            <if test="shengwu != null">#{shengwu},</if>
+            <if test="zhenzi != null">#{zhenzi},</if>
+            <if test="lishi != null">#{lishi},</if>
+            <if test="dili != null">#{dili},</if>
+            <if test="yingyue != null">#{yingyue},</if>
+            <if test="tiyu != null">#{tiyu},</if>
+            <if test="countNum != null">#{countNum},</if>
+            <if test="stuClass != null">#{stuClass},</if>
+            <if test="nianji != null">#{nianji},</if>
+        </trim>
+    </insert>
+
+    <update id="updateStudentGrade" parameterType="StudentGrade">
+        update student_grade
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="stuId != null">stu_id = #{stuId},</if>
+            <if test="stuName != null">stu_name = #{stuName},</if>
+            <if test="yuwen != null">yuwen = #{yuwen},</if>
+            <if test="yingyu != null">yingyu = #{yingyu},</if>
+            <if test="shuxue != null">shuxue = #{shuxue},</if>
+            <if test="wuli != null">wuli = #{wuli},</if>
+            <if test="huaxue != null">huaxue = #{huaxue},</if>
+            <if test="shengwu != null">shengwu = #{shengwu},</if>
+            <if test="zhenzi != null">zhenzi = #{zhenzi},</if>
+            <if test="lishi != null">lishi = #{lishi},</if>
+            <if test="dili != null">dili = #{dili},</if>
+            <if test="yingyue != null">yingyue = #{yingyue},</if>
+            <if test="tiyu != null">tiyu = #{tiyu},</if>
+            <if test="countNum != null">count_num = #{countNum},</if>
+            <if test="stuClass != null">stu_class = #{stuClass},</if>
+            <if test="nianji != null">nianji = #{nianji},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteStudentGradeById" parameterType="Long">
+        delete from student_grade where id = #{id}
+    </delete>
+
+    <delete id="deleteStudentGradeByIds" parameterType="String">
+        delete from student_grade where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

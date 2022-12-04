@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.people.mapper.TeacherMapper">
+    
+    <resultMap type="Teacher" id="TeacherResult">
+        <result property="tId"    column="t_id"    />
+        <result property="tName"    column="t_name"    />
+        <result property="tGonghao"    column="t_gonghao"    />
+        <result property="tSex"    column="t_sex"    />
+        <result property="tSfz"    column="t_sfz"    />
+        <result property="tAge"    column="t_age"    />
+        <result property="tPolitic"    column="t_politic"    />
+        <result property="tNation"    column="t_nation"    />
+        <result property="tEmail"    column="t_email"    />
+        <result property="tPhone"    column="t_phone"    />
+        <result property="tAddress"    column="t_address"    />
+        <result property="yimiao"    column="yimiao"    />
+        <result property="collegeType"    column="college_type"    />
+        <result property="tDep"    column="t_dep"    />
+        <result property="gradeType"    column="grade_type"    />
+        <result property="classType"    column="class_type"    />
+    </resultMap>
+
+    <sql id="selectTeacherVo">
+        select t_id, t_name, t_gonghao, t_sex, t_sfz, t_age, t_politic, t_nation, t_email, t_phone, t_address, yimiao, college_type, t_dep, grade_type, class_type from teacher
+    </sql>
+
+    <select id="selectTeacherList" parameterType="Teacher" resultMap="TeacherResult">
+        <include refid="selectTeacherVo"/>
+        <where>  
+            <if test="tName != null  and tName != ''"> and t_name like concat('%', #{tName}, '%')</if>
+            <if test="tGonghao != null  and tGonghao != ''"> and t_gonghao like concat('%', #{tGonghao}, '%')</if>
+            <if test="tEmail != null  and tEmail != ''"> and t_email like concat('%', #{tEmail}, '%')</if>
+            <if test="tPhone != null  and tPhone != ''"> and t_phone like concat('%', #{tPhone}, '%')</if>
+            <if test="tAddress != null  and tAddress != ''"> and t_address like concat('%', #{tAddress}, '%')</if>
+            <if test="yimiao != null  and yimiao != ''"> and yimiao like concat('%', #{yimiao}, '%')</if>
+            <if test="collegeType != null  and collegeType != ''"> and college_type like concat('%', #{collegeType}, '%')</if>
+            <if test="tDep != null  and tDep != ''"> and t_dep like concat('%', #{tDep}, '%')</if>
+            <if test="gradeType != null  and gradeType != ''"> and grade_type like concat('%', #{gradeType}, '%')</if>
+            <if test="classType != null  and classType != ''"> and class_type like concat('%', #{classType}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectTeacherByTId" parameterType="Long" resultMap="TeacherResult">
+        <include refid="selectTeacherVo"/>
+        where t_id = #{tId}
+    </select>
+        
+    <insert id="insertTeacher" parameterType="Teacher">
+        insert into teacher
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="tId != null">t_id,</if>
+            <if test="tName != null and tName != ''">t_name,</if>
+            <if test="tGonghao != null">t_gonghao,</if>
+            <if test="tSex != null and tSex != ''">t_sex,</if>
+            <if test="tSfz != null">t_sfz,</if>
+            <if test="tAge != null">t_age,</if>
+            <if test="tPolitic != null">t_politic,</if>
+            <if test="tNation != null">t_nation,</if>
+            <if test="tEmail != null and tEmail != ''">t_email,</if>
+            <if test="tPhone != null and tPhone != ''">t_phone,</if>
+            <if test="tAddress != null">t_address,</if>
+            <if test="yimiao != null">yimiao,</if>
+            <if test="collegeType != null">college_type,</if>
+            <if test="tDep != null">t_dep,</if>
+            <if test="gradeType != null">grade_type,</if>
+            <if test="classType != null">class_type,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="tId != null">#{tId},</if>
+            <if test="tName != null and tName != ''">#{tName},</if>
+            <if test="tGonghao != null">#{tGonghao},</if>
+            <if test="tSex != null and tSex != ''">#{tSex},</if>
+            <if test="tSfz != null">#{tSfz},</if>
+            <if test="tAge != null">#{tAge},</if>
+            <if test="tPolitic != null">#{tPolitic},</if>
+            <if test="tNation != null">#{tNation},</if>
+            <if test="tEmail != null and tEmail != ''">#{tEmail},</if>
+            <if test="tPhone != null and tPhone != ''">#{tPhone},</if>
+            <if test="tAddress != null">#{tAddress},</if>
+            <if test="yimiao != null">#{yimiao},</if>
+            <if test="collegeType != null">#{collegeType},</if>
+            <if test="tDep != null">#{tDep},</if>
+            <if test="gradeType != null">#{gradeType},</if>
+            <if test="classType != null">#{classType},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTeacher" parameterType="Teacher">
+        update teacher
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="tName != null and tName != ''">t_name = #{tName},</if>
+            <if test="tGonghao != null">t_gonghao = #{tGonghao},</if>
+            <if test="tSex != null and tSex != ''">t_sex = #{tSex},</if>
+            <if test="tSfz != null">t_sfz = #{tSfz},</if>
+            <if test="tAge != null">t_age = #{tAge},</if>
+            <if test="tPolitic != null">t_politic = #{tPolitic},</if>
+            <if test="tNation != null">t_nation = #{tNation},</if>
+            <if test="tEmail != null and tEmail != ''">t_email = #{tEmail},</if>
+            <if test="tPhone != null and tPhone != ''">t_phone = #{tPhone},</if>
+            <if test="tAddress != null">t_address = #{tAddress},</if>
+            <if test="yimiao != null">yimiao = #{yimiao},</if>
+            <if test="collegeType != null">college_type = #{collegeType},</if>
+            <if test="tDep != null">t_dep = #{tDep},</if>
+            <if test="gradeType != null">grade_type = #{gradeType},</if>
+            <if test="classType != null">class_type = #{classType},</if>
+        </trim>
+        where t_id = #{tId}
+    </update>
+
+    <delete id="deleteTeacherByTId" parameterType="Long">
+        delete from teacher where t_id = #{tId}
+    </delete>
+
+    <delete id="deleteTeacherByTIds" parameterType="String">
+        delete from teacher where t_id in 
+        <foreach item="tId" collection="array" open="(" separator="," close=")">
+            #{tId}
+        </foreach>
+    </delete>
+</mapper>

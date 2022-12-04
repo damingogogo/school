@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.subject.mapper.SubjectDbMapper">
+
+    <resultMap type="SubjectDb" id="SubjectDbResult">
+        <result property="id"    column="id"    />
+        <result property="xid"    column="xid"    />
+        <result property="name"    column="name"    />
+        <result property="nameZr"    column="name_zr"    />
+        <result property="countPeople"    column="count_people"    />
+        <result property="type"    column="type"    />
+        <result property="desction"    column="desction"    />
+    </resultMap>
+
+    <sql id="selectSubjectDbVo">
+        select id, xid, name, name_zr, count_people, type, desction from subject_db
+    </sql>
+
+    <select id="selectSubjectDbList" parameterType="SubjectDb" resultMap="SubjectDbResult">
+        <include refid="selectSubjectDbVo"/>
+        <where>
+            <if test="xid != null  and xid != ''"> and xid = #{xid}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+        </where>
+    </select>
+
+    <select id="selectSubjectDbById" parameterType="Long" resultMap="SubjectDbResult">
+        <include refid="selectSubjectDbVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertSubjectDb" parameterType="SubjectDb" useGeneratedKeys="true" keyProperty="id">
+        insert into subject_db
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="xid != null">xid,</if>
+            <if test="name != null">name,</if>
+            <if test="nameZr != null">name_zr,</if>
+            <if test="countPeople != null">count_people,</if>
+            <if test="type != null">type,</if>
+            <if test="desction != null">desction,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="xid != null">#{xid},</if>
+            <if test="name != null">#{name},</if>
+            <if test="nameZr != null">#{nameZr},</if>
+            <if test="countPeople != null">#{countPeople},</if>
+            <if test="type != null">#{type},</if>
+            <if test="desction != null">#{desction},</if>
+        </trim>
+    </insert>
+
+    <update id="updateSubjectDb" parameterType="SubjectDb">
+        update subject_db
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="xid != null">xid = #{xid},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="nameZr != null">name_zr = #{nameZr},</if>
+            <if test="countPeople != null">count_people = #{countPeople},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="desction != null">desction = #{desction},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSubjectDbById" parameterType="Long">
+        delete from subject_db where id = #{id}
+    </delete>
+
+    <delete id="deleteSubjectDbByIds" parameterType="String">
+        delete from subject_db where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

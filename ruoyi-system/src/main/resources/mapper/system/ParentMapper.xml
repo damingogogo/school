@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.people.mapper.ParentMapper">
+    
+    <resultMap type="Parent" id="ParentResult">
+        <result property="pId"    column="p_id"    />
+        <result property="pName"    column="p_name"    />
+        <result property="pSex"    column="p_sex"    />
+        <result property="pSfz"    column="p_sfz"    />
+        <result property="pAge"    column="p_age"    />
+        <result property="pZzmm"    column="p_zzmm"    />
+        <result property="pAddress"    column="p_address"    />
+        <result property="pPhone"    column="p_phone"    />
+        <result property="pCreateTime"    column="p_create_time"    />
+        <result property="pChildId"    column="P_child_id"    />
+    </resultMap>
+
+    <sql id="selectParentVo">
+        select p_id, p_name, p_sex, p_sfz, p_age, p_zzmm, p_address, p_phone, p_create_time, P_child_id from parent
+    </sql>
+
+    <select id="selectParentList" parameterType="Parent" resultMap="ParentResult">
+        <include refid="selectParentVo"/>
+        <where>  
+            <if test="pName != null  and pName != ''"> and p_name like concat('%', #{pName}, '%')</if>
+            <if test="pSex != null  and pSex != ''"> and p_sex = #{pSex}</if>
+            <if test="pAddress != null  and pAddress != ''"> and p_address = #{pAddress}</if>
+            <if test="pPhone != null  and pPhone != ''"> and p_phone = #{pPhone}</if>
+        </where>
+    </select>
+    
+    <select id="selectParentByPId" parameterType="Long" resultMap="ParentResult">
+        <include refid="selectParentVo"/>
+        where p_id = #{pId}
+    </select>
+        
+    <insert id="insertParent" parameterType="Parent">
+        insert into parent
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pId != null">p_id,</if>
+            <if test="pName != null and pName != ''">p_name,</if>
+            <if test="pSex != null and pSex != ''">p_sex,</if>
+            <if test="pSfz != null">p_sfz,</if>
+            <if test="pAge != null">p_age,</if>
+            <if test="pZzmm != null">p_zzmm,</if>
+            <if test="pAddress != null">p_address,</if>
+            <if test="pPhone != null and pPhone != ''">p_phone,</if>
+            <if test="pCreateTime != null">p_create_time,</if>
+            <if test="pChildId != null">P_child_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pId != null">#{pId},</if>
+            <if test="pName != null and pName != ''">#{pName},</if>
+            <if test="pSex != null and pSex != ''">#{pSex},</if>
+            <if test="pSfz != null">#{pSfz},</if>
+            <if test="pAge != null">#{pAge},</if>
+            <if test="pZzmm != null">#{pZzmm},</if>
+            <if test="pAddress != null">#{pAddress},</if>
+            <if test="pPhone != null and pPhone != ''">#{pPhone},</if>
+            <if test="pCreateTime != null">#{pCreateTime},</if>
+            <if test="pChildId != null">#{pChildId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateParent" parameterType="Parent">
+        update parent
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="pName != null and pName != ''">p_name = #{pName},</if>
+            <if test="pSex != null and pSex != ''">p_sex = #{pSex},</if>
+            <if test="pSfz != null">p_sfz = #{pSfz},</if>
+            <if test="pAge != null">p_age = #{pAge},</if>
+            <if test="pZzmm != null">p_zzmm = #{pZzmm},</if>
+            <if test="pAddress != null">p_address = #{pAddress},</if>
+            <if test="pPhone != null and pPhone != ''">p_phone = #{pPhone},</if>
+            <if test="pCreateTime != null">p_create_time = #{pCreateTime},</if>
+            <if test="pChildId != null">P_child_id = #{pChildId},</if>
+        </trim>
+        where p_id = #{pId}
+    </update>
+
+    <delete id="deleteParentByPId" parameterType="Long">
+        delete from parent where p_id = #{pId}
+    </delete>
+
+    <delete id="deleteParentByPIds" parameterType="String">
+        delete from parent where p_id in 
+        <foreach item="pId" collection="array" open="(" separator="," close=")">
+            #{pId}
+        </foreach>
+    </delete>
+</mapper>

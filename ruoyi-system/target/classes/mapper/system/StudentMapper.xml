@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.people.mapper.StudentMapper">
+    
+    <resultMap type="Student" id="StudentResult">
+        <result property="sId"    column="s_id"    />
+        <result property="sName"    column="s_name"    />
+        <result property="sXh"    column="s_xh"    />
+        <result property="sSfz"    column="s_sfz"    />
+        <result property="sSex"    column="s_sex"    />
+        <result property="sAge"    column="s_age"    />
+        <result property="sNation"    column="s_nation"    />
+        <result property="sPolitic"    column="s_politic"    />
+        <result property="sEmail"    column="s_email"    />
+        <result property="sPhone"    column="s_phone"    />
+        <result property="sAddress"    column="s_address"    />
+        <result property="sSchool"    column="s_school"    />
+        <result property="sCollege"    column="s_college"    />
+        <result property="sDept"    column="s_dept"    />
+        <result property="sGrade"    column="s_grade"    />
+        <result property="sClass"    column="s_class"    />
+        <result property="sMaster"    column="s_master"    />
+        <result property="sParent"    column="s_parent"    />
+    </resultMap>
+
+    <sql id="selectStudentVo">
+        select s_id, s_name, s_xh, s_sfz, s_sex, s_age, s_nation, s_politic, s_email, s_phone, s_address, s_school, s_college, s_dept, s_grade, s_class, s_master, s_parent from student
+    </sql>
+
+    <select id="selectStudentList" parameterType="Student" resultMap="StudentResult">
+        <include refid="selectStudentVo"/>
+        <where>
+            <if test="sName != null  and sName != ''"> and s_name like concat('%', #{sName}, '%')</if>
+            <if test="sXh != null  and sXh != ''"> and s_xh like concat('%', #{sXh}, '%')</if>
+            <if test="sSex != null  and sSex != ''"> and s_sex = #{sSex}</if>
+            <if test="sPolitic != null  and sPolitic != ''"> and s_politic = #{sPolitic}</if>
+            <if test="sAddress != null  and sAddress != ''"> and s_address like concat('%', #{sAddress}, '%')</if>
+            <if test="sSchool != null  and sSchool != ''"> and s_school like concat('%', #{sSchool}, '%')</if>
+            <if test="sCollege != null  and sCollege != ''"> and s_college like concat('%', #{sCollege}, '%')</if>
+            <if test="sDept != null  and sDept != ''"> and s_dept like concat('%', #{sDept}, '%')</if>
+            <if test="sGrade != null  and sGrade != ''"> and s_grade like concat('%', #{sGrade}, '%')</if>
+            <if test="sClass != null  and sClass != ''"> and s_class like concat('%', #{sClass}, '%')</if>
+            <if test="sMaster != null  and sMaster != ''"> and s_master like concat('%', #{sMaster}, '%')</if>
+            <if test="sParent != null  and sParent != ''"> and s_parent like concat('%', #{sParent}, '%')</if>
+        </where>
+    </select>
+    
+    <select id="selectStudentBySId" parameterType="Long" resultMap="StudentResult">
+        <include refid="selectStudentVo"/>
+        where s_id = #{sId}
+    </select>
+        
+    <insert id="insertStudent" parameterType="Student">
+        insert into student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sId != null">s_id,</if>
+            <if test="sName != null and sName != ''">s_name,</if>
+            <if test="sXh != null and sXh != ''">s_xh,</if>
+            <if test="sSfz != null">s_sfz,</if>
+            <if test="sSex != null and sSex != ''">s_sex,</if>
+            <if test="sAge != null">s_age,</if>
+            <if test="sNation != null and sNation != ''">s_nation,</if>
+            <if test="sPolitic != null">s_politic,</if>
+            <if test="sEmail != null and sEmail != ''">s_email,</if>
+            <if test="sPhone != null and sPhone != ''">s_phone,</if>
+            <if test="sAddress != null">s_address,</if>
+            <if test="sSchool != null">s_school,</if>
+            <if test="sCollege != null">s_college,</if>
+            <if test="sDept != null">s_dept,</if>
+            <if test="sGrade != null">s_grade,</if>
+            <if test="sClass != null">s_class,</if>
+            <if test="sMaster != null">s_master,</if>
+            <if test="sParent != null">s_parent,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sId != null">#{sId},</if>
+            <if test="sName != null and sName != ''">#{sName},</if>
+            <if test="sXh != null and sXh != ''">#{sXh},</if>
+            <if test="sSfz != null">#{sSfz},</if>
+            <if test="sSex != null and sSex != ''">#{sSex},</if>
+            <if test="sAge != null">#{sAge},</if>
+            <if test="sNation != null and sNation != ''">#{sNation},</if>
+            <if test="sPolitic != null">#{sPolitic},</if>
+            <if test="sEmail != null and sEmail != ''">#{sEmail},</if>
+            <if test="sPhone != null and sPhone != ''">#{sPhone},</if>
+            <if test="sAddress != null">#{sAddress},</if>
+            <if test="sSchool != null">#{sSchool},</if>
+            <if test="sCollege != null">#{sCollege},</if>
+            <if test="sDept != null">#{sDept},</if>
+            <if test="sGrade != null">#{sGrade},</if>
+            <if test="sClass != null">#{sClass},</if>
+            <if test="sMaster != null">#{sMaster},</if>
+            <if test="sParent != null">#{sParent},</if>
+         </trim>
+    </insert>
+
+    <update id="updateStudent" parameterType="Student">
+        update student
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="sName != null and sName != ''">s_name = #{sName},</if>
+            <if test="sXh != null and sXh != ''">s_xh = #{sXh},</if>
+            <if test="sSfz != null">s_sfz = #{sSfz},</if>
+            <if test="sSex != null and sSex != ''">s_sex = #{sSex},</if>
+            <if test="sAge != null">s_age = #{sAge},</if>
+            <if test="sNation != null and sNation != ''">s_nation = #{sNation},</if>
+            <if test="sPolitic != null">s_politic = #{sPolitic},</if>
+            <if test="sEmail != null and sEmail != ''">s_email = #{sEmail},</if>
+            <if test="sPhone != null and sPhone != ''">s_phone = #{sPhone},</if>
+            <if test="sAddress != null">s_address = #{sAddress},</if>
+            <if test="sSchool != null">s_school = #{sSchool},</if>
+            <if test="sCollege != null">s_college = #{sCollege},</if>
+            <if test="sDept != null">s_dept = #{sDept},</if>
+            <if test="sGrade != null">s_grade = #{sGrade},</if>
+            <if test="sClass != null">s_class = #{sClass},</if>
+            <if test="sMaster != null">s_master = #{sMaster},</if>
+            <if test="sParent != null">s_parent = #{sParent},</if>
+        </trim>
+        where s_id = #{sId}
+    </update>
+
+    <delete id="deleteStudentBySId" parameterType="Long">
+        delete from student where s_id = #{sId}
+    </delete>
+
+    <delete id="deleteStudentBySIds" parameterType="String">
+        delete from student where s_id in 
+        <foreach item="sId" collection="array" open="(" separator="," close=")">
+            #{sId}
+        </foreach>
+    </delete>
+</mapper>

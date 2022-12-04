@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.signup.mapper.BaomingDbMapper">
+
+    <resultMap type="BaomingDb" id="BaomingDbResult">
+        <result property="id"    column="id"    />
+        <result property="applyid"    column="applyID"    />
+        <result property="stuId"    column="stu_id"    />
+        <result property="nianji"    column="nianji"    />
+        <result property="classid"    column="classid"    />
+        <result property="typeApply"    column="type_apply"    />
+        <result property="createDay"    column="create_day"    />
+        <result property="state"    column="state"    />
+        <result property="title"    column="title"    />
+        <result property="bz"    column="bz"    />
+        <result property="stuname"    column="stuname"    />
+    </resultMap>
+
+    <sql id="selectBaomingDbVo">
+        select id, applyID, stu_id, nianji, classid, type_apply, create_day, state, title, bz, stuname from baoming_db
+    </sql>
+
+    <select id="selectBaomingDbList" parameterType="BaomingDb" resultMap="BaomingDbResult">
+        <include refid="selectBaomingDbVo"/>
+        <where>
+            <if test="applyid != null  and applyid != ''"> and applyID = #{applyid}</if>
+            <if test="stuId != null "> and stu_id = #{stuId}</if>
+            <if test="typeApply != null  and typeApply != ''"> and type_apply = #{typeApply}</if>
+            <if test="createDay != null "> and create_day = #{createDay}</if>
+            <if test="state != null  and state != ''"> and state = #{state}</if>
+            <if test="title != null  and title != ''"> and title like concat('%', #{title}, '%')</if>
+            <if test="stuname != null  and stuname != ''"> and stuname like concat('%', #{stuname}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectBaomingDbById" parameterType="Long" resultMap="BaomingDbResult">
+        <include refid="selectBaomingDbVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertBaomingDb" parameterType="BaomingDb" useGeneratedKeys="true" keyProperty="id">
+        insert into baoming_db
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="applyid != null">applyID,</if>
+            <if test="stuId != null">stu_id,</if>
+            <if test="nianji != null">nianji,</if>
+            <if test="classid != null">classid,</if>
+            <if test="typeApply != null">type_apply,</if>
+            <if test="createDay != null">create_day,</if>
+            <if test="state != null">state,</if>
+            <if test="title != null">title,</if>
+            <if test="bz != null">bz,</if>
+            <if test="stuname != null">stuname,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="applyid != null">#{applyid},</if>
+            <if test="stuId != null">#{stuId},</if>
+            <if test="nianji != null">#{nianji},</if>
+            <if test="classid != null">#{classid},</if>
+            <if test="typeApply != null">#{typeApply},</if>
+            <if test="createDay != null">#{createDay},</if>
+            <if test="state != null">#{state},</if>
+            <if test="title != null">#{title},</if>
+            <if test="bz != null">#{bz},</if>
+            <if test="stuname != null">#{stuname},</if>
+        </trim>
+    </insert>
+
+    <update id="updateBaomingDb" parameterType="BaomingDb">
+        update baoming_db
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="applyid != null">applyID = #{applyid},</if>
+            <if test="stuId != null">stu_id = #{stuId},</if>
+            <if test="nianji != null">nianji = #{nianji},</if>
+            <if test="classid != null">classid = #{classid},</if>
+            <if test="typeApply != null">type_apply = #{typeApply},</if>
+            <if test="createDay != null">create_day = #{createDay},</if>
+            <if test="state != null">state = #{state},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="bz != null">bz = #{bz},</if>
+            <if test="stuname != null">stuname = #{stuname},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBaomingDbById" parameterType="Long">
+        delete from baoming_db where id = #{id}
+    </delete>
+
+    <delete id="deleteBaomingDbByIds" parameterType="String">
+        delete from baoming_db where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
