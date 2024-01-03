@@ -3,7 +3,7 @@
 
 进入根目录下的sql文件，然后将这个sql文件下的school.sql文件导入到数据库，这个你应该会。
 #1.创建数据库 School_work
-#2。导入表（这个school.sql文件）
+#2。导入表（这个school.sql文件）123
 
 
 
